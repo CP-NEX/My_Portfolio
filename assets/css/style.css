@@ -115,8 +115,8 @@ body.light-mode .navbar-brand {
 }
 
 /* Navbar Scrolled State */
-.navbar.scrolled {
-    background: var(--bg-navbar) !important;
+.navbar.scrolled, .navbar:not(.scrolled) {
+/*    background: var(--bg-navbar) !important;*/
     backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--border);
     padding: 10px 0;
@@ -139,7 +139,10 @@ body.light-mode .navbar:not(.scrolled) .nav-social-link {
     background: rgba(255,255,255,0.2);
     color: white;
 }
-
+body.light-mode .navbar:not(.scrolled) .navbar-toggler {
+    background-color: var(--dark) !important;
+    border: 3px solid var(--primary) !important;
+}
 body.light-mode .navbar.scrolled .nav-link {
     color: var(--text-main) !important; /* Black on scroll */
 }
