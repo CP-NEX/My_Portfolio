@@ -598,6 +598,9 @@ body.light-mode .marquee-item {
     justify-content: center;
     background: linear-gradient(135deg, var(--bg-section) 0%, var(--primary) 150%);
 }
+body.light-mode .about-content-card > h2 {
+    color: var(--light);
+}
 
 /* --- SKILLS PROGRESS BARS --- */
 .skill-item .progress {
@@ -1268,4 +1271,5 @@ body.light-mode .progress-wrap i {
     opacity: 1;
     transform: rotate(0deg) scale(1);
 }
+
 
