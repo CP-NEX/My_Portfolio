@@ -2,18 +2,14 @@
 const projectData = [{
         title: "Motion Reel",
         cat: "motion",
-        img: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=800"
+        video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        img: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=800&auto=format&fit=crop"
     },
     {
         title: "Website Design",
         cat: "web",
         link: "https://puroheritage.github.io/website/",
         img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800"
-    },
-    {
-        title: "VFX Shot",
-        cat: "motion",
-        img: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=800&auto=format&fit=crop"
     },
     {
         title: "Responsive Design",
@@ -48,10 +44,10 @@ const projectData = [{
         desc: "Modern Neumorphic Design"
     },
     {
-        title: "2D Brand Story",
-        cat: "video",
+        title: "My Portfolio",
+        cat: "portfolio",
         img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800",
-        video: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Example ID
+        link: "#", // Example ID
         desc: "After Effects Animation"
     }
 
@@ -762,4 +758,5 @@ if (quickForm) {
             });
     });
 }
+
 
