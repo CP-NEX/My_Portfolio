@@ -25,7 +25,7 @@ const projectData = [{
     {
         title: "E-Commerce web software",
         cat: "web",
-        link: "https://project-huion.42web.io/",
+        link: "https://projecthuion.great-site.net/",
         img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800"
     },
 
@@ -758,5 +758,6 @@ if (quickForm) {
             });
     });
 }
+
 
 
