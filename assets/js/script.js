@@ -31,11 +31,11 @@ const projectData = [{
     },
 
     {
-        title: "E-Commerce Full Stack",
+        title: "Wordpress Dianamic Website",
         cat: "web",
-        img: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=800",
-        link: "https://your-live-link.com",
-        desc: "MERN Stack + SEO Optimized"
+        img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800",
+        link: "kartikeytravels.com", // Example ID
+        desc: "Fully responsive and custom-designed WordPress dynamic website for travel services."
     },
     {
         title: "Fintech App UI",
@@ -48,7 +48,7 @@ const projectData = [{
         title: "My Portfolio",
         cat: "portfolio",
         img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800",
-        link: "#", // Example ID
+        link: "index.html", // Example ID
         desc: "After Effects Animation"
     }
 
@@ -759,6 +759,7 @@ if (quickForm) {
             });
     });
 }
+
 
 
 
