@@ -19,7 +19,7 @@ const projectData = [{
     },
     {
         title: "Brand Identity",
-        cat: "motion",
+        cat: "graphic",
         link: "https://www.behance.net/chander_kumar/",
         img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=800"
     },
@@ -759,6 +759,7 @@ if (quickForm) {
             });
     });
 }
+
 
 
 
