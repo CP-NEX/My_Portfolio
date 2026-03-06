@@ -1,7 +1,7 @@
 // AJAX / Dynamic Gallery Data
 const projectData = [{
         title: "Motion Reel",
-        cat: "motion, video",
+        cat: "video",
         video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         img: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=800&auto=format&fit=crop"
     },
@@ -759,6 +759,7 @@ if (quickForm) {
             });
     });
 }
+
 
 
 
