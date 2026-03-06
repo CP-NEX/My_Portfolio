@@ -3,7 +3,7 @@ const projectData = [{
         title: "Motion Reel",
         cat: "video",
         link: "https://www.youtube.com/watch?v=20VCrgXofdk",
-        img: "assets/images/gallary_img2.jpeg"
+        img: "assets/images/gallary_img2.avif"
     },
     {
         title: "Website Design",
@@ -40,7 +40,7 @@ const projectData = [{
     {
         title: "Fintech App UI",
         cat: "uiux",
-        img: "assets/images/gallary_img7.jpeg",
+        img: "assets/images/gallary_img7.avif",
         link: "https://www.figma.com/proto/JAGPRgFo3tRP8KQOcS83BA/High-fedility-app?node-id=788-8352&p=f&t=ROJt9c7qJdFQZ9HS-0&scaling=scale-down&content-scaling=fixed&page-id=788%3A8352",
         desc: "Modern Neumorphic Design"
     },
@@ -759,6 +759,7 @@ if (quickForm) {
             });
     });
 }
+
 
 
 
