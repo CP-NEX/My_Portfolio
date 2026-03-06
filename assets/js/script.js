@@ -34,7 +34,7 @@ const projectData = [{
         title: "Wordpress Dianamic Website",
         cat: "web",
         img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800",
-        link: "kartikeytravels.com", // Example ID
+        link: "https://kartikeytravels.com/", // Example ID
         desc: "Fully responsive and custom-designed WordPress dynamic website for travel services."
     },
     {
@@ -759,6 +759,7 @@ if (quickForm) {
             });
     });
 }
+
 
 
 
