@@ -3,51 +3,51 @@ const projectData = [{
         title: "Motion Reel",
         cat: "video",
         link: "https://www.youtube.com/watch?v=20VCrgXofdk",
-        img: "assets/images/gallary_img2.avif"
+        img: "assets/images/gallary_img2.webp"
     },
     {
         title: "Website Design",
         cat: "web",
         link: "https://puroheritage.github.io/website/",
-        img: "assets/images/gallary_img3.jpeg"
+        img: "assets/images/gallary_img3.webp"
     },
     {
         title: "Responsive Design",
         cat: "web",
         link: "https://cp-nex.github.io/coinpay_website/",
-        img: "assets/images/gallary_img4.jpeg"
+        img: "assets/images/gallary_img4.webp"
     },
     {
         title: "Brand Identity",
         cat: "graphic",
         link: "https://www.behance.net/chander_kumar/",
-        img: "assets/images/gallary_img5.jpeg"
+        img: "assets/images/gallary_img5.webp"
     },
     {
         title: "E-Commerce web software",
         cat: "web",
         link: "https://huionproject.great-site.net/",
-        img: "assets/images/gallary_img6.jpeg"
+        img: "assets/images/gallary_img6.webp"
     },
 
     {
         title: "Wordpress Dianamic Website",
         cat: "web",
-        img: "assets/images/gallary_img1.jpeg",
+        img: "assets/images/gallary_img1.webp",
         link: "https://kartikeytravels.com/", // Example ID
         desc: "Fully responsive and custom-designed WordPress dynamic website for travel services."
     },
     {
         title: "Fintech App UI",
         cat: "uiux",
-        img: "assets/images/gallary_img7.avif",
+        img: "assets/images/gallary_img7.webp",
         link: "https://www.figma.com/proto/JAGPRgFo3tRP8KQOcS83BA/High-fedility-app?node-id=788-8352&p=f&t=ROJt9c7qJdFQZ9HS-0&scaling=scale-down&content-scaling=fixed&page-id=788%3A8352",
         desc: "Modern Neumorphic Design"
     },
     {
         title: "My Portfolio",
         cat: "portfolio",
-        img: "assets/images/gallary_img8.jpeg",
+        img: "assets/images/gallary_img8.webp",
         link: "index.html", // Example ID
         desc: "After Effects Animation"
     }
