@@ -1,56 +1,56 @@
 // AJAX / Dynamic Gallery Data
 const projectData = [{
-        title: "Motion Reel",
-        cat: "video",
-        link: "https://www.youtube.com/watch?v=20VCrgXofdk",
-        img: "assets/images/gallary_img2.webp"
-    },
-    {
-        title: "Website Design",
-        cat: "web",
-        link: "https://puroheritage.github.io/website/",
-        img: "assets/images/gallary_img3.webp"
-    },
-    {
-        title: "Responsive Design",
-        cat: "web",
-        link: "https://cp-nex.github.io/coinpay_website/",
-        img: "assets/images/gallary_img4.webp"
-    },
-    {
-        title: "Brand Identity",
-        cat: "graphic",
-        link: "https://www.behance.net/chander_kumar/",
-        img: "assets/images/gallary_img5.webp"
-    },
-    {
-        title: "E-Commerce web software",
-        cat: "web",
-        link: "https://huionproject.great-site.net/",
-        img: "assets/images/gallary_img6.webp"
-    },
+    title: "Motion Reel",
+    cat: "video",
+    link: "https://www.youtube.com/watch?v=20VCrgXofdk",
+    img: "assets/images/gallary_img2.webp"
+},
+{
+    title: "Website Design",
+    cat: "web",
+    link: "https://puroheritage.github.io/website/",
+    img: "assets/images/gallary_img3.webp"
+},
+{
+    title: "Responsive Design",
+    cat: "web",
+    link: "https://cp-nex.github.io/coinpay_website/",
+    img: "assets/images/gallary_img4.webp"
+},
+{
+    title: "Brand Identity",
+    cat: "graphic",
+    link: "https://www.behance.net/chander_kumar/",
+    img: "assets/images/gallary_img5.webp"
+},
+{
+    title: "E-Commerce web software",
+    cat: "web",
+    link: "https://huionproject.great-site.net/",
+    img: "assets/images/gallary_img6.webp"
+},
 
-    {
-        title: "Wordpress Dianamic Website",
-        cat: "web",
-        img: "assets/images/gallary_img1.webp",
-        link: "https://kartikeytravels.com/", // Example ID
-        desc: "Fully responsive and custom-designed WordPress dynamic website for travel services."
-    },
-    {
-        title: "Fintech App UI",
-        cat: "uiux",
-        img: "assets/images/gallary_img7.webp",
-        link: "https://www.figma.com/proto/JAGPRgFo3tRP8KQOcS83BA/High-fedility-app?node-id=788-8352&p=f&t=ROJt9c7qJdFQZ9HS-0&scaling=scale-down&content-scaling=fixed&page-id=788%3A8352",
-        desc: "Modern Neumorphic Design"
-    },
-    {
-        title: "My Portfolio",
-        cat: "portfolio",
-        img: "assets/images/gallary_img8.webp",
-        link: "index.html", // Example ID
-        desc: "After Effects Animation"
-    }
+{
+    title: "Wordpress Dianamic Website",
+    cat: "web",
+    img: "assets/images/gallary_img1.webp",
+    link: "https://kartikeytravels.com/", // Example ID
+    desc: "Fully responsive and custom-designed WordPress dynamic website for travel services."
+},
+{
+    title: "Fintech App UI",
+    cat: "uiux",
+    img: "assets/images/gallary_img7.webp",
+    link: "https://www.figma.com/proto/JAGPRgFo3tRP8KQOcS83BA/High-fedility-app?node-id=788-8352&p=f&t=ROJt9c7qJdFQZ9HS-0&scaling=scale-down&content-scaling=fixed&page-id=788%3A8352",
+    desc: "Modern Neumorphic Design"
+},
+{
+    title: "My Portfolio",
+    cat: "portfolio",
+    img: "assets/images/gallary_img8.webp",
+    link: "index.html", // Example ID
+    desc: "After Effects Animation"
+}
 
 
 ];
@@ -85,9 +85,9 @@ function loadGallery(filter = 'all') {
                 wrapper.append(`
                 <div class="col-md-12 gallery-card">
                     <div class="gallery-item hover-target">
-                        <img src="${proj.img}" class="gallery-img" alt="${proj.title}">
+                        <img src="${proj.img}" class="gallery-img" alt="Screenshot of project: ${proj.title}">
                         <div class="gallery-overlay">
-                            <h4 class="primary-color">${proj.title}</h4>
+                            <h3 class="primary-color h4">${proj.title}</h3>
                             ${proj.desc ? `<p class="text-white small mb-0">${proj.desc}</p>` : ''}
                             ${actionBtn}
                         </div>
@@ -249,11 +249,11 @@ gsap.utils.toArray('.text-fill-anim').forEach(text => {
 // 4. Hero Section Timeline Animation
 const heroTl = gsap.timeline();
 heroTl.from(".navbar", {
-        y: -100,
-        opacity: 0,
-        duration: 1,
-        ease: "power4.out"
-    })
+    y: -100,
+    opacity: 0,
+    duration: 1,
+    ease: "power4.out"
+})
     .from(".hero-anim", {
         y: 50,
         opacity: 0,
@@ -582,34 +582,34 @@ $(document).ready(() => {
             const newTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
             applyTheme(newTheme);
         });
-    } 
+    }
 });
 
 // --- EMAILJS ENQUIRY LOGIC ---
 
 const contactForm = document.getElementById("contact-form");
 if (contactForm) {
-    contactForm.addEventListener("submit", function(event) {
+    contactForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
         // Debugging ke liye check karein ki button click ho raha hai ya nahi
         console.log("Form submit ho raha hai...");
 
         emailjs.sendForm("service_u4jukmf", "template_spcg32q", this)
-        .then(function(response) {
-            console.log("SUCCESS!", response.status, response.text);
-            document.getElementById("success-msg").innerHTML = "Message Sent Successfully!";
-            contactForm.reset();
-        }, function(error) {
-            console.log("FAILED...", error);
-            alert("Failed to send message. Error: " + JSON.stringify(error));
-        });
+            .then(function (response) {
+                console.log("SUCCESS!", response.status, response.text);
+                document.getElementById("success-msg").innerHTML = "Message Sent Successfully!";
+                contactForm.reset();
+            }, function (error) {
+                console.log("FAILED...", error);
+                alert("Failed to send message. Error: " + JSON.stringify(error));
+            });
     });
 }
 
 // --- TYPING ANIMATION FOR HERO ---
 const typingText = document.querySelector('.typing-text');
-if(typingText) {
+if (typingText) {
     const words = ["Web Designer", "Web Developer", "Graphic Designer", "UI/UX Designer", "Visual Artist", "Media Content Manager"];
     let wordIndex = 0;
     let charIndex = 0;
@@ -617,7 +617,7 @@ if(typingText) {
 
     function typeEffect() {
         const currentWord = words[wordIndex];
-        
+
         if (isDeleting) {
             // Backspace Effect
             charIndex--;
@@ -660,8 +660,8 @@ spotlightCards.forEach(card => {
 // --- SKILLS PROGRESS BAR ANIMATION ---
 if (document.querySelector('.progress-bar')) {
     gsap.utils.toArray('.progress-bar').forEach(bar => {
-        gsap.fromTo(bar, 
-            { width: '0%' }, 
+        gsap.fromTo(bar,
+            { width: '0%' },
             {
                 width: () => bar.parentElement.getAttribute('aria-valuenow') + '%',
                 scrollTrigger: {
@@ -714,7 +714,7 @@ const contactModalEl = document.getElementById('contactModal');
 
 if (contactBtn && contactModalEl) {
     const contactModal = new bootstrap.Modal(contactModalEl);
-    
+
     // Toggle Modal on Button Click
     contactBtn.addEventListener('click', () => {
         if (contactModalEl.classList.contains('show')) {
@@ -736,12 +736,12 @@ if (contactBtn && contactModalEl) {
 // --- QUICK CONTACT FORM SUBMISSION ---
 const quickForm = document.getElementById('quick-contact-form');
 if (quickForm) {
-    quickForm.addEventListener('submit', function(e) {
+    quickForm.addEventListener('submit', function (e) {
         e.preventDefault();
         const btn = this.querySelector('button[type="submit"]');
         const originalText = btn.innerText;
         btn.innerText = 'SENDING...';
-        
+
         emailjs.sendForm("service_u4jukmf", "template_spcg32q", this)
             .then(() => {
                 document.getElementById("quick-success-msg").innerText = "Message Sent Successfully!";
@@ -759,20 +759,3 @@ if (quickForm) {
             });
     });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
