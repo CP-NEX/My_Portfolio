@@ -83,7 +83,8 @@
                 </div>
                 <!-- Theme Switcher -->
                 <div class="ms-lg-3 mt-2 mt-lg-0">
-                    <button class="btn btn-sm switch" id="theme-switcher"> <i class="fas fa-sun"></i> </button>
+                    <button class="btn btn-sm switch" id="theme-switcher" aria-label="Toggle dark/light mode">
+                        <i class="fas fa-sun" aria-hidden="true"></i> </button>
                 </div>
             </div>
         </div>
@@ -93,7 +94,7 @@
         <div class="container position-relative z-2 h-100">
             <div class="row align-items-center h-100">
                 <div class="col-lg-7 hero-content">
-                    <h3 class="display-5 fw-bold mb-2 hero-anim">Hello</h3>
+                    <p class="display-5 fw-bold mb-2 hero-anim">Hello</p>
                     <h1 class="display-1 fw-bold mb-4 hero-anim">I am <span class="self-name">Chander Kumar</span></h1>
                     <h2 class="display-4 fw-bold hero-anim">a <span class="typing-text"></span></h2>
                     <div class="d-flex gap-3 mt-5 hero-anim">
@@ -102,7 +103,7 @@
                     </div>
                 </div>
                 <div class="col-lg-5 position-relative text-center d-none d-lg-block">
-                    <div class="behind-text">WEB<br>DEV</div>
+                    <div class="behind-text" aria-hidden="true">WEB<br>DEV</div>
                     <div class="hero-img-wrapper hero-anim">
                         <!-- Replace this URL with your actual image -->
                         <img src="assets/images/self_img.webp" class="img-fluid hero-user-img" alt="Chander Kumar">
@@ -134,14 +135,14 @@
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-5 mb-4 mb-lg-0">
-                    <div class="about-content-card hover-target">
-                        <h2 class="display-3 fw-bold text-white mb-2">25+</h2>
-                        <h5 class="primary-color mb-4">PROJECTS COMPLETED</h5>
+                    <article class="about-content-card hover-target">
+                        <p class="display-3 fw-bold text-white mb-2">25+</p>
+                        <h3 class="h5 primary-color mb-4">PROJECTS COMPLETED</h3>
                         <p class="text-secondary">I bridge the gap between design and engineering. With a background in
                             APDMD (Advanced Program in Digital Media &amp; Design), I understand the aesthetics of
                             motion and layout. My coding journey allows me to bring those static designs to life with
                             performance and interactivity.</p>
-                    </div>
+                    </article>
                 </div>
                 <div class="col-lg-6 offset-lg-1">
                     <h2 class="mb-4 typewriter-text">MORE THAN JUST CODE</h2>
@@ -698,7 +699,7 @@
                         </div>
                         <div class="col-12">
                             <textarea name="message" class="form-control bg-dark border-secondary p-3" rows="4"
-                                placeholder="Message" required></textarea>
+                                placeholder="Message" aria-label="Message" required></textarea>
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-main w-100">SEND MESSAGE</button>
@@ -776,17 +777,17 @@
     <div class="cursor-outline"></div>
 
     <!-- Scroll Progress Button -->
-    <div class="progress-wrap hover-target">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+    <div class="progress-wrap hover-target" role="button" aria-label="Scroll to top">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102" aria-hidden="true">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
-        <i class="fas fa-arrow-up"></i>
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </div>
 
     <!-- Floating Contact Button -->
-    <div class="floating-contact-btn hover-target">
-        <i class="fas fa-comment-dots"></i>
-        <i class="fas fa-times"></i>
+    <div class="floating-contact-btn hover-target" role="button" aria-label="Open quick contact">
+        <i class="fas fa-comment-dots" aria-hidden="true"></i>
+        <i class="fas fa-times" aria-hidden="true"></i>
     </div>
 
     <!-- Quick Contact Modal -->
