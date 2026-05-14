@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: https://chanderkumar.com/sitemap.xml
+Sitemap: https://cp-nex.github.io/My_Portfolio/sitemap.xml
