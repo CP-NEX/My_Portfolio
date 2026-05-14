@@ -24,6 +24,169 @@
     <link rel="stylesheet" href="assets/bootstrap-5/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <style>
+        :root {
+            --accent-glow: rgba(255, 1, 79, 0.3);
+            --card-glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.1);
+        }
+
+        .article-hero {
+            position: relative;
+            height: 70vh;
+            background: url('assets/images/marketing-preview.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
+        }
+
+        .hero-content-glass {
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 2rem;
+            border: 1px solid var(--border-glass);
+            text-align: center;
+            max-width: 900px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .content-section {
+            padding: 100px 0;
+            background: #0a0a0a;
+        }
+
+        .glass-card {
+            background: var(--card-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(5px);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(255, 1, 79, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            border-radius: 1rem;
+            border: 1px solid var(--border-glass);
+            margin: 3rem 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+        }
+
+        .comparison-table th {
+            background: var(--primary);
+            color: #fff;
+            padding: 1.5rem;
+            text-transform: uppercase;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .comparison-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-glass);
+            color: var(--text-secondary-dark);
+        }
+
+        .video-card {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            background: #000;
+            border: 1px solid var(--border-glass);
+            transition: 0.3s ease;
+        }
+
+        .video-card img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            opacity: 0.7;
+            transition: 0.5s;
+        }
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        .visual-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item-premium {
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 1px solid var(--border-glass);
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item-premium img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .sticky-toc {
+            position: sticky;
+            top: 100px;
+            padding: 1.5rem;
+            background: var(--card-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 1rem;
+        }
+
+        .toc-link {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--text-secondary-dark);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .toc-link:hover,
+        .toc-link.active {
+            color: var(--primary);
+        }
+    </style>
     <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">
     {
@@ -77,11 +240,10 @@
                 <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
                     <a href="https://www.instagram.com/cpnexsolution?igsh=cTFiejBmMDdxem11&utm_source=ig_contact_invite"
                         class="nav-social-link" target="_blank" rel="noopener noreferrer nofollow"
-                        aria-label="Follow me on Instagram">
-                        <i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        aria-label="Follow me on Instagram"> <i class="fab fa-instagram" aria-hidden="true"></i></a>
                     <a href="https://www.behance.net/chander_kumar/" class="nav-social-link" target="_blank"
-                        rel="noopener noreferrer nofollow" aria-label="View my work on Behance">
-                        <i class="fab fa-behance" aria-hidden="true"></i></a>
+                        rel="noopener noreferrer nofollow" aria-label="View my work on Behance"> <i
+                            class="fab fa-behance" aria-hidden="true"></i></a>
                     <a href="https://youtube.com/@cpnexsolution?si=MYFCsKd1DL9264qu" class="nav-social-link"
                         target="_blank" rel="noopener noreferrer nofollow" aria-label="Subscribe to my YouTube channel">
                         <i class="fab fa-youtube" aria-hidden="true"></i></a>
@@ -114,86 +276,341 @@
         </div>
     </section>
 
-    <section class="py-5 bg-black">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-6">
-                    <h2 class="mt-5 mb-3 primary-color h4">What is Marketing?</h2>
-                    <p class="text-secondary">Marketing entails reaching your target audience with your products or
-                        services and motivating them to make a purchase. Digital marketing is a modern form of this
-                        practice that utilizes online channels—such as search engines, social media, email, and
-                        websites—to enhance brand awareness, generate leads, and boost sales.
-                    </p>
+    <section class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="sticky-toc">
+                        <h6 class="mb-3 primary-color">CONTENTS</h6>
+                        <a href="#introduction" class="toc-link">Introduction</a>
+                        <a href="#marketing-types" class="toc-link">SEO vs PPC</a>
+                        <a href="#offerings" class="toc-link">What I Offer</a>
+                        <a href="#importance" class="toc-link">Why it Matters?</a>
+                        <a href="#business-enhancement" class="toc-link">Maximize ROI</a>
+                        <a href="#principles" class="toc-link">Core Principles</a>
+                        <a href="#stack" class="toc-link">Marketing Stack</a>
+                        <a href="#resources" class="toc-link">Learning Hub</a>
+                        <a href="#inspiration" class="toc-link">Visual Strategy</a>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <h2 class="mt-5 mb-3 primary-color h4">Why Is Marketing Important?</h2>
-                    <p class="text-secondary">In today's competitive market, simply having a good product is not enough.
-                        You must reach your target customers and demonstrate how your product fulfills their needs.
-                        Effective marketing enhances your brand visibility, attracts new customers, and fosters strong
-                        relationships with existing ones. This enables your business to achieve sustainable growth.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="py-5 bg-black">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-7">
-                    <h2 class="mb-4 typewriter-text">GROWING YOUR BRAND GLOBALLY</h2>
-                    <p class="text-secondary lead">Result-Oriented Marketing Strategies That Will Boost
-                        Your Visibility
-                        and Sales.</p>
-                    <p class="text-secondary">Digital marketing isn't just about running ads; it's about
-                        telling a brand
-                        story. I utilize a blend of SEO, social media, and branding that converts your
-                        reach into real
-                        growth.</p>
-
-                    <h3 class="mt-5 mb-3 primary-color h4">What I Offer:</h3>
-                    <ul class="list-unstyled text-secondary">
-                        <li class="mb-2"><i class="fas fa-check-circle primary-color me-2"></i> Search
-                            Engine
-                            Optimization (SEO): Optimizing Your Website to Rank at the Top on Google</li>
-                        <li class="mb-2"><i class="fas fa-check-circle primary-color me-2"></i> Social
-                            Media Marketing
-                            (SMM): Running engaging content and campaigns on social media platforms.
-                        </li>
-                        <li class="mb-2"><i class="fas fa-check-circle primary-color me-2"></i> Content
-                            & Email
-                            Marketing: Creating valuable content and connecting with customers through email campaigns.
-                        </li>
-                        <li class="mb-2"><i class="fas fa-check-circle primary-color me-2"></i> Brand
-                            Identity &
-                            Strategy: Building a strong and memorable brand image.</li>
-                        <li class="mb-2"><i class="fas fa-check-circle primary-color me-2"></i> Paid
-                            Advertising (PPC): Targeted ads can be used cleverly to achieve instant results.</li>
-                        <li class="mb-2"><i class="fas fa-check-circle primary-color me-2"></i> Search
-                            Engine Optimization</li>
-                        <li class="mb-2"><i class="fas fa-check-circle primary-color me-2"></i> Social
-                            Media Campaigns</li>
-                        <li class="mb-2"><i class="fas fa-check-circle primary-color me-2"></i> Email
-                            Strategy</li>
-                    </ul>
-                </div>
-                <div class="col-lg-5">
-
-                    <div class="about-content-card hover-target p-5">
-                        <h3 class="primary-color mb-4 h4">Marketing Stack</h3>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-dark border border-secondary p-3">Google Ads</span>
-                            <span class="badge bg-dark border border-secondary p-3">Meta Business
-                                Suite</span>
-                            <span class="badge bg-dark border border-secondary p-3">SEO Audits</span>
-                            <span class="badge bg-dark border border-secondary p-3">Social Media
-                                Management</span>
-                            <span class="badge bg-dark border border-secondary p-3">Content
-                                Writing</span>
-                            <span class="badge bg-dark border border-secondary p-3">Email Marketing
-                                Tools</span>
-                            <span class="badge bg-dark border border-secondary p-3">Branding</span>
+                <div class="col-lg-9">
+                    <div id="introduction" class="mb-5">
+                        <h2 class="mb-4">Growing Your Brand Globally</h2>
+                        <p class="text-secondary lead typewriter-text">Result-oriented marketing strategies that convert
+                            reach into real growth.</p>
+                        <p class="text-secondary">Digital marketing is not just about running ads; it's about telling a
+                            brand story. I utilize a blend of SEO, social media, and branding to drive sustainable sales
+                            and brand loyalty.</p>
+                    </div>
+                    <div class="row g-4 mb-5">
+                        <div id="what-is-seo" class="col-md-6">
+                            <div class="glass-card service-card hover-target">
+                                <h3 class="h4 primary-color mb-3">What is SEO?</h3>
+                                <p class="text-secondary">Search Engine Optimization is the process of improving your
+                                    site's organic visibility. It focuses on ranking higher in Google results without
+                                    paying for every click.</p>
+                                <ul class="list-unstyled text-secondary mt-3">
+                                    <li><i class="fas fa-check primary-color me-2"></i> Keyword Research</li>
+                                    <li><i class="fas fa-check primary-color me-2"></i> Content Optimization</li>
+                                    <li><i class="fas fa-check primary-color me-2"></i> Backlink Building</li>
+                                    <li><i class="fas fa-check primary-color me-2"></i> Technical Audits</li>
+                                </ul>
+                            </div>
                         </div>
+                        <div id="what-is-ppc" class="col-md-6">
+                            <div class="glass-card service-card hover-target">
+                                <h3 class="h4 primary-color mb-3">What is PPC?</h3>
+                                <p class="text-secondary">Pay-Per-Click advertising allows you to buy traffic. You show
+                                    ads to a targeted audience and pay a fee only when someone clicks on your link for
+                                    instant reach.</p>
+                                <ul class="list-unstyled text-secondary mt-3">
+                                    <li><i class="fas fa-check primary-color me-2"></i> Targeted Google Ads</li>
+                                    <li><i class="fas fa-check primary-color me-2"></i> Social Media Campaigns</li>
+                                    <li><i class="fas fa-check primary-color me-2"></i> ROI Tracking</li>
+                                    <li><i class="fas fa-check primary-color me-2"></i> A/B Ad Testing</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="marketing-types" class="mb-5">
+                        <h2 class="mb-4">Growth Strategies</h2>
+                        <div class="comparison-table-wrapper">
+                            <table class="comparison-table">
+                                <thead>
+                                    <tr>
+                                        <th>Organic (SEO)</th>
+                                        <th>Paid (PPC)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Long-term sustainable visibility</td>
+                                        <td>Instant traffic and results</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Focuses on Content & Trust</td>
+                                        <td>Focuses on Targeting & Conversion</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zero cost per click</td>
+                                        <td>Pay per visitor action</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="offerings" class="row g-4 mb-5">
+                        <div class="col-md-6">
+                            <div class="glass-card service-card hover-target">
+                                <h3 class="h4 primary-color mb-3">SEO Audits</h3>
+                                <p class="text-secondary">Comprehensive analysis of your website's performance to
+                                    identify ranking opportunities.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="glass-card service-card hover-target">
+                                <h3 class="h4 primary-color mb-3">Social Media SMM</h3>
+                                <p class="text-secondary">Engaging campaigns across Instagram, Meta, and LinkedIn to
+                                    build community.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="importance" class="mb-5">
+                        <h2 class="mb-4">Why Digital Marketing Matters?</h2>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="glass-card process-card hover-target p-4">
+                                    <h4 class="h5 primary-color">Brand Visibility</h4>
+                                    <p class="small text-secondary">Getting your business seen by the right people at
+                                        the right time.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="glass-card process-card hover-target p-4">
+                                    <h4 class="h5 primary-color">Lead Generation</h4>
+                                    <p class="small text-secondary">Turning interest into actionable sales leads and
+                                        qualified prospects.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="glass-card process-card hover-target p-4">
+                                    <h4 class="h5 primary-color">Data Insights</h4>
+                                    <p class="small text-secondary">Measure every click and view to understand your
+                                        customer's journey.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="glass-card process-card hover-target p-4">
+                                    <h4 class="h5 primary-color">Customer Trust</h4>
+                                    <p class="small text-secondary">Building long-term authority and credibility in your
+                                        market space.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="glass-card process-card hover-target p-4">
+                                    <h4 class="h5 primary-color">Cost Efficiency</h4>
+                                    <p class="small text-secondary">Digital marketing offers a higher ROI than
+                                        traditional advertising channels.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="glass-card process-card hover-target p-4">
+                                    <h4 class="h5 primary-color">Global Reach</h4>
+                                    <p class="small text-secondary">Break local barriers and reach customers across the
+                                        entire globe.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="business-enhancement" class="mb-5">
+                        <h2 class="mb-4">Maximizing Your Business ROI</h2>
+                        <div class="glass-card about-content-card hover-target">
+                            <ul class="list-unstyled row g-3">
+                                <li class="col-md-6 mb-3">
+                                    <strong class="text-white d-block mb-1">Targeted Advertising</strong>
+                                    <span class="text-secondary">Spend your budget on people who are actually looking
+                                        for your product.</span>
+                                </li>
+                                <li class="col-md-6 mb-3">
+                                    <strong class="text-white d-block mb-1">Brand Storytelling</strong>
+                                    <span class="text-secondary">Create emotional connections through content that
+                                        resonates with your audience.</span>
+                                </li>
+                                <li class="col-md-6 mb-3">
+                                    <strong class="text-white d-block mb-1">Viral Potential</strong>
+                                    <span class="text-secondary">Social media strategies allow your brand to spread
+                                        rapidly through sharing.</span>
+                                </li>
+                                <li class="col-md-6 mb-3">
+                                    <strong class="text-white d-block mb-1">Continuous Growth</strong>
+                                    <span class="text-secondary">SEO ensures long-term organic traffic even after you
+                                        stop running ads.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="principles" class="mb-5">
+                        <h2 class="mb-4">Core Marketing Principles</h2>
+                        <div class="row g-3">
+                            <div class="col-6 col-lg-3">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fas fa-users mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">Audience-Centric</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fas fa-chart-bar mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">Data-Driven</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fas fa-sync-alt mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">Consistency</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fas fa-globe mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">Omnichannel</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="stack" class="mb-5">
+                        <h2 class="mb-4">Marketing Stack</h2>
+                        <div class="row g-3">
+                            <div class="col-6 col-lg-4">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fab fa-google mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">Google Ads</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fab fa-facebook-f mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">Meta Business</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fas fa-bullseye mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">HubSpot</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fas fa-mail-bulk mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">Mailchimp</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fas fa-search mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">Search Console</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fas fa-palette mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">Canva Pro</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="resources" class="mb-5">
+                        <h2 class="mb-4">Marketing Learning Hub</h2>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <a href="https://www.youtube.com/watch?v=bixR-KIJKYM" target="_blank"
+                                    rel="noopener noreferrer nofollow" class="text-decoration-none">
+                                    <div class="video-card hover-target">
+                                        <img src="https://img.youtube.com/vi/bixR-KIJKYM/maxresdefault.jpg"
+                                            alt="Marketing Strategy">
+                                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                                        <div class="p-3">
+                                            <h5 class="text-white mb-0">Digital Marketing Course 2026</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="https://www.youtube.com/watch?v=vW-v8uM9Sno" target="_blank"
+                                    rel="noopener noreferrer nofollow" class="text-decoration-none">
+                                    <div class="video-card hover-target">
+                                        <img src="https://img.youtube.com/vi/vW-v8uM9Sno/maxresdefault.jpg"
+                                            alt="SEO Basics">
+                                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                                        <div class="p-3">
+                                            <h5 class="text-white mb-0">SEO for Beginners</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="inspiration" class="mb-5">
+                        <h2 class="mb-4">Visual Strategy</h2>
+                        <div class="row g-3 mb-5">
+                            <div class="col-6 col-lg-4">
+                                <a href="https://blog.hubspot.com/marketing" target="_blank"
+                                    rel="noopener noreferrer nofollow" class="text-decoration-none">
+                                    <div class="tool-card p-3 hover-target h-100">
+                                        <i class="fas fa-chart-line mb-2 fs-2 primary-color"></i>
+                                        <h6 class="mb-0">HubSpot Insights</h6>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <a href="https://www.searchenginejournal.com/" target="_blank"
+                                    rel="noopener noreferrer nofollow" class="text-decoration-none">
+                                    <div class="tool-card p-3 hover-target h-100">
+                                        <i class="fas fa-search mb-2 fs-2 primary-color"></i>
+                                        <h6 class="mb-0">SEO Journal</h6>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <a href="https://neilpatel.com/blog/" target="_blank" rel="noopener noreferrer nofollow"
+                                    class="text-decoration-none">
+                                    <div class="tool-card p-3 hover-target h-100">
+                                        <i class="fas fa-bullhorn mb-2 fs-2 primary-color"></i>
+                                        <h6 class="mb-0">Neil Patel Blog</h6>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="visual-gallery">
+                            <div class="gallery-item-premium hover-target">
+                                <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=800&q=80"
+                                    alt="Marketing Meeting">
+                            </div>
+                            <div class="gallery-item-premium hover-target">
+                                <img src="https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=800&q=80"
+                                    alt="Digital Ad Concept">
+                            </div>
+                            <div class="gallery-item-premium hover-target">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+                                    alt="Team Brainstorming">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 p-5 glass-card about-content-card hover-target text-center">
+                        <h2 class="primary-color mb-3">Boost Your Brand Presence</h2>
+                        <p class="text-secondary mb-4">Ready to reach your ideal audience? Let's build a strategy that
+                            works.</p>
+                        <a href="contact.html" class="btn btn-main px-5 py-3">BOOK A STRATEGY CALL</a>
                     </div>
                 </div>
             </div>
