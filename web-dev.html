@@ -24,6 +24,169 @@
     <link rel="stylesheet" href="assets/bootstrap-5/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <style>
+        :root {
+            --accent-glow: rgba(255, 1, 79, 0.3);
+            --card-glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.1);
+        }
+
+        .article-hero {
+            position: relative;
+            height: 70vh;
+            background: url('assets/images/web-dev-preview.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
+        }
+
+        .hero-content-glass {
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 2rem;
+            border: 1px solid var(--border-glass);
+            text-align: center;
+            max-width: 900px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .content-section {
+            padding: 100px 0;
+            background: #0a0a0a;
+        }
+
+        .glass-card {
+            background: var(--card-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(5px);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(255, 1, 79, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            border-radius: 1rem;
+            border: 1px solid var(--border-glass);
+            margin: 3rem 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+        }
+
+        .comparison-table th {
+            background: var(--primary);
+            color: #fff;
+            padding: 1.5rem;
+            text-transform: uppercase;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .comparison-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-glass);
+            color: var(--text-secondary-dark);
+        }
+
+        .video-card {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            background: #000;
+            border: 1px solid var(--border-glass);
+            transition: 0.3s ease;
+        }
+
+        .video-card img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            opacity: 0.7;
+            transition: 0.5s;
+        }
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        .visual-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item-premium {
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 1px solid var(--border-glass);
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item-premium img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .sticky-toc {
+            position: sticky;
+            top: 100px;
+            padding: 1.5rem;
+            background: var(--card-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 1rem;
+        }
+
+        .toc-link {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--text-secondary-dark);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .toc-link:hover,
+        .toc-link.active {
+            color: var(--primary);
+        }
+    </style>
     <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">
     {
@@ -76,11 +239,10 @@
                 <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
                     <a href="https://www.instagram.com/cpnexsolution?igsh=cTFiejBmMDdxem11&utm_source=ig_contact_invite"
                         class="nav-social-link" target="_blank" rel="noopener noreferrer nofollow"
-                        aria-label="Follow me on Instagram">
-                        <i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        aria-label="Follow me on Instagram"> <i class="fab fa-instagram" aria-hidden="true"></i></a>
                     <a href="https://www.behance.net/chander_kumar/" class="nav-social-link" target="_blank"
-                        rel="noopener noreferrer nofollow" aria-label="View my work on Behance">
-                        <i class="fab fa-behance" aria-hidden="true"></i></a>
+                        rel="noopener noreferrer nofollow" aria-label="View my work on Behance"> <i
+                            class="fab fa-behance" aria-hidden="true"></i></a>
                     <a href="https://youtube.com/@cpnexsolution?si=MYFCsKd1DL9264qu" class="nav-social-link"
                         target="_blank" rel="noopener noreferrer nofollow" aria-label="Subscribe to my YouTube channel">
                         <i class="fab fa-youtube" aria-hidden="true"></i></a>
@@ -112,77 +274,341 @@
         </div>
     </section>
 
-    <section class="py-5 bg-black">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-6">
-                    <h2 class="mt-5 mb-3 primary-color h4">What is Web Development?</h2>
-                    <p class="text-secondary">Web development refers to the creation of websites and web applications.
-                        It encompasses both the front-end (what the user sees and interacts with) and the back-end (the
-                        server, database, and application logic). The front-end utilizes HTML, CSS, and JavaScript,
-                        while the back-end employs languages ​​such as PHP, Node.js, and Python, as well as databases
-                        like MySQL and MongoDB.</p>
+    <section class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="sticky-toc">
+                        <h6 class="mb-3 primary-color">CONTENTS</h6>
+                        <a href="#introduction" class="toc-link">Introduction</a>
+                        <a href="#what-is-frontend" class="toc-link">What is Frontend?</a>
+                        <a href="#what-is-backend" class="toc-link">What is Backend?</a>
+                        <a href="#frontend-backend" class="toc-link">Frontend vs Backend</a>
+                        <a href="#offerings" class="toc-link">What I Offer</a>
+                        <a href="#importance" class="toc-link">Why it Matters?</a>
+                        <a href="#business-enhancement" class="toc-link">Enhance Business</a>
+                        <a href="#principles" class="toc-link">Dev Principles</a>
+                        <a href="#tech-stack" class="toc-link">Tech Stack</a>
+                        <a href="#resources" class="toc-link">Learning Resources</a>
+                        <a href="#inspiration" class="toc-link">Visual Inspiration</a>
+                    </div>
                 </div>
-                <div class="col-lg-6">
 
-                    <h2 class="mt-5 mb-3 primary-color h4">Why Is Web Development Important?</h2>
-                    <p class="text-secondary">In today's digital age, an online presence is essential for every business
-                        and individual. A well-designed website builds your brand image, helps you reach customers, and
-                        provides a platform for selling your products and services. Responsive design ensures that your
-                        website looks great on every device, while SEO-friendly development helps you rank higher in
-                        Google search results, thereby generating increased traffic and business.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="col-lg-9">
+                    <div id="introduction" class="mb-5">
+                        <h2 class="mb-4">Building the Future of the Web</h2>
+                        <p class="text-secondary lead typewriter-text">Web development is the art of creating fast,
+                            functional, and scalable digital solutions that drive business success.</p>
+                        <p class="text-secondary">In today's digital age, an online presence is essential. A
+                            well-designed website builds your brand image, helps you reach customers, and provides a
+                            platform for growth. I specialize in custom solutions utilizing React JS, Bootstrap 5, and
+                            WordPress.</p>
+                    </div>
 
-    <section class="py-5 bg-black">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-7">
-                    <h2 class="mb-4 typewriter-text">BUILDING THE FUTURE OF WEB</h2>
-                    <p class="text-secondary lead">I build fast and responsive websites using modern
-                        frameworks and
-                        clean code.</p>
-                    <p class="text-secondary">Your website's architecture should be designed to ensure
-                        fast loading
-                        speeds and be SEO-friendly. I provide custom solutions—utilizing tools such as
-                        React JS,
-                        Bootstrap 5, and WordPress that enhance user engagement.</p>
-
-                    <h3 class="mt-5 mb-3 primary-color h4">What I Offer:</h3>
-                    <ul class="list-unstyled text-secondary">
-                        <li class="mb-2"><i class="fas fa-check-circle primary-color me-2"></i> Custom
-                            Website
-                            Development: Tailor-made websites designed to meet the unique needs of every business.</li>
-                        <li class="mb-2"><i class="fas fa-check-circle primary-color me-2"></i> Single
-                            Page Applications (SPA) with React: Fast, interactive, and modern web
-                            experiences.</li>
-                        <li class="mb-2"><i class="fas fa-check-circle primary-color me-2"></i>
-                            E-commerce Solutions: Online stores that help you sell your products with ease.</li>
-                        <li class="mb-2"><i class="fas fa-check-circle primary-color me-2"></i>
-                            Responsive & Mobile-First Design: Websites that look great on every screen size.</li>
-                        <li class="mb-2"><i class="fas fa-check-circle primary-color me-2"></i> Website
-                            Maintenance & Support: Keeping your website up-to-date and secure.</li>
-                    </ul>
-                </div>
-                <div class="col-lg-5">
-
-                    <div class="about-content-card hover-target p-5">
-                        <h3 class="primary-color mb-4 h4">Tech Stack</h3>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-dark border border-secondary p-3">HTML5</span>
-                            <span class="badge bg-dark border border-secondary p-3">CSS3</span>
-                            <span class="badge bg-dark border border-secondary p-3">JavaScript
-                                (ES6+)</span>
-                            <span class="badge bg-dark border border-secondary p-3">React JS</span>
-                            <span class="badge bg-dark border border-secondary p-3">Bootstrap 5</span>
-                            <span class="badge bg-dark border border-secondary p-3">PHP / Laravel</span>
-                            <span class="badge bg-dark border border-secondary p-3">MYSQL</span>
-                            <span class="badge bg-dark border border-secondary p-3">WordPress</span>
-                            <span class="badge bg-dark border border-secondary p-3">Git / GitHub</span>
+                    <div class="row g-4 mb-5">
+                        <div id="what-is-frontend" class="col-md-6">
+                            <div class="glass-card service-card hover-target">
+                                <h3 class="h4 primary-color mb-3">What is Frontend?</h3>
+                                <p class="text-secondary">Frontend development is the "client-side" of a website. It
+                                    refers
+                                    to everything users see and interact with on their screen, from fonts and colors to
+                                    sliders and dropdown menus.</p>
+                                <ul class="list-unstyled text-secondary mt-3">
+                                    <li><i class="fas fa-check primary-color me-2"></i> User Interface (UI)</li>
+                                    <li><i class="fas fa-check primary-color me-2"></i> Interactivity (JS/React)</li>
+                                    <li><i class="fas fa-check primary-color me-2"></i> Responsive Layouts</li>
+                                    <li><i class="fas fa-check primary-color me-2"></i> Performance Optimization</li>
+                                </ul>
+                            </div>
                         </div>
+                        <div id="what-is-backend" class="col-md-6">
+                            <div class="glass-card service-card hover-target">
+                                <h3 class="h4 primary-color mb-3">What is Backend?</h3>
+                                <p class="text-secondary">Backend development is the "server-side." It manages the
+                                    logic,
+                                    database, and background processes that power the frontend functionality, like user
+                                    logins and payments.</p>
+                                <ul class="list-unstyled text-secondary mt-3">
+                                    <li><i class="fas fa-check primary-color me-2"></i> Server Management</li>
+                                    <li><i class="fas fa-check primary-color me-2"></i> Database Architecture</li>
+                                    <li><i class="fas fa-check primary-color me-2"></i> API Integrations</li>
+                                    <li><i class="fas fa-check primary-color me-2"></i> Security Protocols</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="frontend-backend" class="mb-5">
+                        <h2 class="mb-4">Understanding the Core</h2>
+                        <div class="comparison-table-wrapper">
+                            <table class="comparison-table">
+                                <thead>
+                                    <tr>
+                                        <th>Frontend Development</th>
+                                        <th>Backend Development</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Focuses on UI and User Interaction</td>
+                                        <td>Focuses on Server, Database, and Logic</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Uses HTML, CSS, JavaScript, React</td>
+                                        <td>Uses PHP, Node.js, Python, MySQL</td>
+                                    </tr>
+                                    <tr>
+                                        <td>What users see on the screen</td>
+                                        <td>Behind-the-scenes architecture</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="offerings" class="row g-4 mb-5">
+                        <div class="col-md-6">
+                            <div class="glass-card service-card hover-target">
+                                <h3 class="h4 primary-color mb-3">Custom Website Dev</h3>
+                                <p class="text-secondary">Tailor-made websites designed to meet unique business needs
+                                    with clean, SEO-friendly code.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="glass-card service-card hover-target">
+                                <h3 class="h4 primary-color mb-3">Single Page Apps</h3>
+                                <p class="text-secondary">Fast, interactive, and modern web experiences built with React
+                                    JS for seamless navigation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="importance" class="mb-5">
+                        <h2 class="mb-4">Why Professional Web Development Matters?</h2>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="glass-card process-card hover-target p-4">
+                                    <h4 class="h5 primary-color">Lightning Speed</h4>
+                                    <p class="small text-secondary">Optimized code ensures your site loads instantly,
+                                        keeping bounce rates low.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="glass-card process-card hover-target p-4">
+                                    <h4 class="h5 primary-color">Future Scaling</h4>
+                                    <p class="small text-secondary">Modular architecture allows your site to grow
+                                        alongside your business.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="glass-card process-card hover-target p-4">
+                                    <h4 class="h5 primary-color">Ironclad Security</h4>
+                                    <p class="small text-secondary">Protecting user data and business integrity with
+                                        secure coding practices.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="glass-card process-card hover-target p-4">
+                                    <h4 class="h5 primary-color">SEO Dominance</h4>
+                                    <p class="small text-secondary">Search-engine-friendly structure helps you rank
+                                        higher in organic search.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="glass-card process-card hover-target p-4">
+                                    <h4 class="h5 primary-color">Total Control</h4>
+                                    <p class="small text-secondary">Custom solutions mean you aren't limited by
+                                        templates or restrictive plugins.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="glass-card process-card hover-target p-4">
+                                    <h4 class="h5 primary-color">Accessibility</h4>
+                                    <p class="small text-secondary">Ensuring your web presence is usable by everyone,
+                                        including people with disabilities.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="business-enhancement" class="mb-5">
+                        <h2 class="mb-4">How Development Scales Your Business</h2>
+                        <div class="glass-card about-content-card hover-target">
+                            <ul class="list-unstyled row g-3">
+                                <li class="col-md-6 mb-3">
+                                    <strong class="text-white d-block mb-1">Automated Operations</strong>
+                                    <span class="text-secondary">Custom dashboards can automate lead tracking and
+                                        inventory management.</span>
+                                </li>
+                                <li class="col-md-6 mb-3">
+                                    <strong class="text-white d-block mb-1">Global Reach</strong>
+                                    <span class="text-secondary">Your business stays open 24/7 for anyone, anywhere in
+                                        the world.</span>
+                                </li>
+                                <li class="col-md-6 mb-3">
+                                    <strong class="text-white d-block mb-1">Brand Authority</strong>
+                                    <span class="text-secondary">A unique, custom-coded site establishes your brand as a
+                                        market leader.</span>
+                                </li>
+                                <li class="col-md-6 mb-3">
+                                    <strong class="text-white d-block mb-1">Integration Ready</strong>
+                                    <span class="text-secondary">Connect easily with CRM, ERP, and payment gateways for
+                                        smooth workflows.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="principles" class="mb-5">
+                        <h2 class="mb-4">Core Engineering Principles</h2>
+                        <div class="glass-card tool-card hover-target">
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="tool-badge">Clean Code</span>
+                                <span class="tool-badge">Performance-First</span>
+                                <span class="tool-badge">Modular Design</span>
+                                <span class="tool-badge">Semantic HTML</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tech-stack" class="mb-5">
+                        <h2 class="mb-4">My Tech Stack</h2>
+                        <div class="row g-3">
+                            <div class="col-6 col-lg-3">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fab fa-html5 mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">HTML5</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fab fa-css3-alt mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">CSS3</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fab fa-js mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">JavaScript</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fab fa-react mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">React JS</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fab fa-bootstrap mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">Bootstrap 5</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fab fa-wordpress mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">WordPress</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fab fa-laravel mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">PHP / Laravel</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fas fa-database mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">MySQL</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="resources" class="mb-5">
+                        <h2 class="mb-4">Web Development Resources</h2>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <a href="https://www.youtube.com/watch?v=zJSY8tJY_7s" target="_blank"
+                                    rel="noopener noreferrer nofollow" class="text-decoration-none">
+                                    <div class="video-card hover-target">
+                                        <img src="https://img.youtube.com/vi/zJSY8tJY_7s/maxresdefault.jpg"
+                                            alt="Web Dev Tutorial">
+                                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                                        <div class="p-3">
+                                            <h5 class="text-white mb-0">Web Development in 2026</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="https://www.youtube.com/watch?v=w7ejDZ8SWv8" target="_blank"
+                                    rel="noopener noreferrer nofollow" class="text-decoration-none">
+                                    <div class="video-card hover-target">
+                                        <img src="https://img.youtube.com/vi/w7ejDZ8SWv8/maxresdefault.jpg"
+                                            alt="React JS Course">
+                                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                                        <div class="p-3">
+                                            <h5 class="text-white mb-0">React JS Crash Course</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="inspiration" class="mb-5">
+                        <h2 class="mb-4">Visual Inspiration</h2>
+                        <div class="row g-3 mb-5">
+                            <div class="col-6 col-lg-4">
+                                <a href="https://github.com/trending" target="_blank" rel="noopener noreferrer nofollow"
+                                    class="text-decoration-none">
+                                    <div class="tool-card p-3 hover-target h-100">
+                                        <i class="fab fa-github mb-2 fs-2 primary-color"></i>
+                                        <h6 class="mb-0">GitHub Trending</h6>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <a href="https://dev.to/t/webdev" target="_blank" rel="noopener noreferrer nofollow"
+                                    class="text-decoration-none">
+                                    <div class="tool-card p-3 hover-target h-100">
+                                        <i class="fas fa-terminal mb-2 fs-2 primary-color"></i>
+                                        <h6 class="mb-0">Dev.to Community</h6>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <a href="https://www.smashingmagazine.com/category/web-development/" target="_blank"
+                                    rel="noopener noreferrer nofollow" class="text-decoration-none">
+                                    <div class="tool-card p-3 hover-target h-100">
+                                        <i class="fas fa-book mb-2 fs-2 primary-color"></i>
+                                        <h6 class="mb-0">Smashing Guides</h6>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="visual-gallery">
+                            <div class="gallery-item-premium hover-target">
+                                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+                                    alt="Clean Code">
+                            </div>
+                            <div class="gallery-item-premium hover-target">
+                                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
+                                    alt="Development Setup">
+                            </div>
+                            <div class="gallery-item-premium hover-target">
+                                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80"
+                                    alt="Laptop Development">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 p-5 glass-card about-content-card hover-target text-center">
+                        <h2 class="primary-color mb-3">Scale Your Business Online</h2>
+                        <p class="text-secondary mb-4">Ready to build a website that performs? Let's discuss your
+                            technical requirements.</p>
+                        <a href="contact.html" class="btn btn-main px-5 py-3">START DEVELOPING</a>
                     </div>
                 </div>
             </div>
