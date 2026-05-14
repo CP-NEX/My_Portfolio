@@ -24,6 +24,169 @@
     <link rel="stylesheet" href="assets/bootstrap-5/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <style>
+        :root {
+            --accent-glow: rgba(255, 1, 79, 0.3);
+            --card-glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.1);
+        }
+
+        .article-hero {
+            position: relative;
+            height: 70vh;
+            background: url('assets/images/web-research-preview.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
+        }
+
+        .hero-content-glass {
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 2rem;
+            border: 1px solid var(--border-glass);
+            text-align: center;
+            max-width: 900px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .content-section {
+            padding: 100px 0;
+            background: #0a0a0a;
+        }
+
+        .glass-card {
+            background: var(--card-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(5px);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(255, 1, 79, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            border-radius: 1rem;
+            border: 1px solid var(--border-glass);
+            margin: 3rem 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+        }
+
+        .comparison-table th {
+            background: var(--primary);
+            color: #fff;
+            padding: 1.5rem;
+            text-transform: uppercase;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .comparison-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-glass);
+            color: var(--text-secondary-dark);
+        }
+
+        .video-card {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            background: #000;
+            border: 1px solid var(--border-glass);
+            transition: 0.3s ease;
+        }
+
+        .video-card img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            opacity: 0.7;
+            transition: 0.5s;
+        }
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        .visual-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item-premium {
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 1px solid var(--border-glass);
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item-premium img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .sticky-toc {
+            position: sticky;
+            top: 100px;
+            padding: 1.5rem;
+            background: var(--card-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 1rem;
+        }
+
+        .toc-link {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--text-secondary-dark);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .toc-link:hover,
+        .toc-link.active {
+            color: var(--primary);
+        }
+    </style>
     <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">
     {
@@ -76,14 +239,13 @@
                 <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
                     <a href="https://www.instagram.com/cpnexsolution?igsh=cTFiejBmMDdxem11&utm_source=ig_contact_invite"
                         class="nav-social-link" target="_blank" rel="noopener noreferrer nofollow"
-                        aria-label="Instagram">
-                        <i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        aria-label="Instagram"> <i class="fab fa-instagram" aria-hidden="true"></i></a>
                     <a href="https://www.behance.net/chander_kumar/" class="nav-social-link" target="_blank"
-                        rel="noopener noreferrer nofollow" aria-label="Behance">
-                        <i class="fab fa-behance" aria-hidden="true"></i></a>
+                        rel="noopener noreferrer nofollow" aria-label="Behance"> <i class="fab fa-behance"
+                            aria-hidden="true"></i></a>
                     <a href="https://youtube.com/@cpnexsolution?si=MYFCsKd1DL9264qu" class="nav-social-link"
-                        target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube">
-                        <i class="fab fa-youtube" aria-hidden="true"></i></a>
+                        target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"> <i
+                            class="fab fa-youtube" aria-hidden="true"></i></a>
                 </div>
                 <div class="ms-lg-3 mt-2 mt-lg-0">
                     <button class="btn btn-sm switch" id="theme-switcher"> <i class="fas fa-sun"></i> </button>
@@ -112,78 +274,344 @@
         </div>
     </section>
 
-    <section class="py-5 bg-black">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-6">
-                    <h2 class="mt-5 mb-3 primary-color h4">What is Web Research?</h2>
-                    <p class="text-secondary">Web research involves collecting, analyzing, and interpreting data and
-                        information available on the internet. Its objective is to understand market trends, analyze
-                        competitors' strategies, and identify the behavior and preferences of the target audience. This
-                        helps you make data-driven decisions.
-                    </p>
+    <section class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="sticky-toc">
+                        <h6 class="mb-3 primary-color">CONTENTS</h6>
+                        <a href="#introduction" class="toc-link">Introduction</a>
+                        <a href="#primary-research" class="toc-link">Primary Research</a>
+                        <a href="#secondary-research" class="toc-link">Secondary Research</a>
+                        <a href="#research-types" class="toc-link">Qualitative vs Quantitative</a>
+                        <a href="#offerings" class="toc-link">What I Offer</a>
+                        <a href="#importance" class="toc-link">Why it Matters?</a>
+                        <a href="#business-enhancement" class="toc-link">Decision Driving</a>
+                        <a href="#principles" class="toc-link">Data Principles</a>
+                        <a href="#analysis-tools" class="toc-link">Analysis Tools</a>
+                        <a href="#resources" class="toc-link">Knowledge Base</a>
+                        <a href="#inspiration" class="toc-link">Visual Insights</a>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <h2 class="mt-5 mb-3 primary-color h4">Why is Web Research Important?</h2>
-                    <p class="text-secondary">In the digital world, accurate information is the key to your success. Web
-                        research helps you identify the opportunities and threats present in the market. It enables you
-                        to enhance your products and services, optimize your marketing strategies, and stay ahead of
-                        your competitors. It also assists you in gaining a deep understanding of your target audience
-                        and fulfilling their needs.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="py-5 bg-black">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-7">
-                    <h2 class="mb-4 typewriter-text">UNLOCKING DATA-DRIVEN OPPORTUNITIES</h2>
-                    <p class="text-secondary lead">By analyzing market trends and competitor strategies,
-                        I give your
-                        business an edge.</p>
-                    <p class="text-secondary">Having the right data is essential for success in the
-                        digital space. I
-                        conduct in-depth research that helps you understand SEO content, market gaps,
-                        and target
-                        audience behavior.</p>
+                <div class="col-lg-9">
+                    <div id="introduction" class="mb-5">
+                        <h2 class="mb-4">Unlocking Data-Driven Opportunities</h2>
+                        <p class="text-secondary lead typewriter-text">Accurate data is the foundation of every
+                            successful business strategy in the digital world.</p>
+                        <p class="text-secondary">Web research involves collecting and interpreting information to
+                            understand market trends and competitor strategies. I conduct in-depth research that helps
+                            you identify market gaps and target audience behavior.</p>
+                    </div>
 
-                    <h3 class="mt-5 mb-3 primary-color h4">What I Offer:</h3>
-                    <ul class="list-unstyled text-secondary">
-                        <li class="mb-2"><i class="fas fa-check-circle primary-color me-2"></i>
-                            Competitor Analysis</li>
-                        <li class="mb-2"><i class="fas fa-check-circle primary-color me-2"></i>
-                            Competitor Analysis: Understanding your rivals' strengths and weaknesses.
-                        </li>
-                        <li class="mb-2"><i class="fas fa-check-circle primary-color me-2"></i> Keyword
-                            & SEO Research: Finding the right keywords that help you rank in search engines.</li>
-                        <li class="mb-2"><i class="fas fa-check-circle primary-color me-2"></i> Market
-                            Trend Identification: Identifying new trends and consumer behavior patterns.</li>
-                        <li class="mb-2"><i class="fas fa-check-circle primary-color me-2"></i> User
-                            Persona Development: Creating detailed profiles of your ideal customers.</li>
-                        <li class="mb-2"><i class="fas fa-check-circle primary-color me-2"></i> Data
-                            Analysis & Reporting: Transforming Research Findings into Actionable Insights.
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-5">
-
-                    <div class="about-content-card hover-target p-5">
-                        <h3 class="primary-color mb-4 h4">Analysis Tools</h3>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-dark border border-secondary p-3">Google Search
-                                Console</span>
-                            <span class="badge bg-dark border border-secondary p-3">Google
-                                Analytics</span>
-                            <span class="badge bg-dark border border-secondary p-3">Semrush</span>
-                            <span class="badge bg-dark border border-secondary p-3">Ahrefs</span>
-                            <span class="badge bg-dark border border-secondary p-3">Hotjar</span>
-                            <span class="badge bg-dark border border-secondary p-3">Excel /
-                                Sheets</span>
-                            <span class="badge bg-dark border border-secondary p-3">SurveyMonkey</span>
+                    <div class="row g-4 mb-5">
+                        <div id="primary-research" class="col-md-6">
+                            <div class="glass-card service-card hover-target">
+                                <h3 class="h4 primary-color mb-3">What is Primary Research?</h3>
+                                <p class="text-secondary">This involves gathering raw data directly from original
+                                    sources. It is custom-tailored to solve specific business problems and provides
+                                    unique, proprietary insights.</p>
+                                <ul class="list-unstyled text-secondary mt-3">
+                                    <li><i class="fas fa-check primary-color me-2"></i> User Surveys</li>
+                                    <li><i class="fas fa-check primary-color me-2"></i> One-on-One Interviews</li>
+                                    <li><i class="fas fa-check primary-color me-2"></i> Usability Testing</li>
+                                    <li><i class="fas fa-check primary-color me-2"></i> Field Observations</li>
+                                </ul>
+                            </div>
                         </div>
+                        <div id="secondary-research" class="col-md-6">
+                            <div class="glass-card service-card hover-target">
+                                <h3 class="h4 primary-color mb-3">What is Secondary Research?</h3>
+                                <p class="text-secondary">Secondary research utilizes data that has already been
+                                    collected, analyzed, and published by others, such as market reports, case studies,
+                                    and industry articles.</p>
+                                <ul class="list-unstyled text-secondary mt-3">
+                                    <li><i class="fas fa-check primary-color me-2"></i> Competitor Analysis</li>
+                                    <li><i class="fas fa-check primary-color me-2"></i> Market Trend Reports</li>
+                                    <li><i class="fas fa-check primary-color me-2"></i> SEO Keyword Data</li>
+                                    <li><i class="fas fa-check primary-color me-2"></i> Government Statistics</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="research-types" class="mb-5">
+                        <h2 class="mb-4">Research Methodologies</h2>
+                        <div class="comparison-table-wrapper">
+                            <table class="comparison-table">
+                                <thead>
+                                    <tr>
+                                        <th>Primary Research</th>
+                                        <th>Secondary Research</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Direct data from users/customers</td>
+                                        <td>Analyzing existing online information</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Surveys, Interviews, Observations</td>
+                                        <td>Competitor sites, Reports, Case Studies</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Specific and proprietary</td>
+                                        <td>Broad and accessible context</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="offerings" class="row g-4 mb-5">
+                        <div class="col-md-6">
+                            <div class="glass-card service-card hover-target">
+                                <h3 class="h4 primary-color mb-3">Competitor Analysis</h3>
+                                <p class="text-secondary">In-depth tracking of rivals to understand their strengths,
+                                    weaknesses, and market positioning.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="glass-card service-card hover-target">
+                                <h3 class="h4 primary-color mb-3">SEO Keyword Research</h3>
+                                <p class="text-secondary">Identifying high-value search terms that drive organic traffic
+                                    and improve rankings.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="importance" class="mb-5">
+                        <h2 class="mb-4">Why Web Research is the First Step?</h2>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="glass-card process-card hover-target p-4">
+                                    <h4 class="h5 primary-color">Market Gaps</h4>
+                                    <p class="small text-secondary">Discover what your competitors are missing and fill
+                                        that need.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="glass-card process-card hover-target p-4">
+                                    <h4 class="h5 primary-color">Risk Mitigation</h4>
+                                    <p class="small text-secondary">Don't guess with your budget. Base your moves on
+                                        verified data.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="glass-card process-card hover-target p-4">
+                                    <h4 class="h5 primary-color">User Intent</h4>
+                                    <p class="small text-secondary">Understand exactly what your users are searching for
+                                        and why.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="glass-card process-card hover-target p-4">
+                                    <h4 class="h5 primary-color">Trend Spotting</h4>
+                                    <p class="small text-secondary">Identify emerging trends before they become
+                                        mainstream in your industry.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="glass-card process-card hover-target p-4">
+                                    <h4 class="h5 primary-color">Strategic Edge</h4>
+                                    <p class="small text-secondary">Stay two steps ahead of rivals by knowing their
+                                        digital footprint.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="glass-card process-card hover-target p-4">
+                                    <h4 class="h5 primary-color">SEO Foundations</h4>
+                                    <p class="small text-secondary">Building your site on the right keywords from day
+                                        one.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="business-enhancement" class="mb-5">
+                        <h2 class="mb-4">Driving Smart Business Decisions</h2>
+                        <div class="glass-card about-content-card hover-target">
+                            <ul class="list-unstyled row g-3">
+                                <li class="col-md-6 mb-3">
+                                    <strong class="text-white d-block mb-1">Evidence-Based Strategy</strong>
+                                    <span class="text-secondary">Replace gut feeling with cold, hard numbers for higher
+                                        success rates.</span>
+                                </li>
+                                <li class="col-md-6 mb-3">
+                                    <strong class="text-white d-block mb-1">Pricing Analysis</strong>
+                                    <span class="text-secondary">Research competitor pricing to position your brand
+                                        optimally.</span>
+                                </li>
+                                <li class="col-md-6 mb-3">
+                                    <strong class="text-white d-block mb-1">Niche Identification</strong>
+                                    <span class="text-secondary">Find untapped sub-markets where competition is low but
+                                        demand is high.</span>
+                                </li>
+                                <li class="col-md-6 mb-3">
+                                    <strong class="text-white d-block mb-1">User Persona Insights</strong>
+                                    <span class="text-secondary">Build real-world customer profiles based on actual
+                                        online behavior.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="principles" class="mb-5">
+                        <h2 class="mb-4">Data Integrity Principles</h2>
+                        <div class="row g-3">
+                            <div class="col-6 col-lg-3">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fas fa-bullseye mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">Data Accuracy</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fas fa-search-plus mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">Verification</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fas fa-shield-alt mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">Privacy Focus</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fas fa-balance-scale mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">Ethics</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="analysis-tools" class="mb-5">
+                        <h2 class="mb-4">Analysis Toolkit</h2>
+                        <div class="row g-3">
+                            <div class="col-6 col-lg-4">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fas fa-chart-pie mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">Google Analytics</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fas fa-rocket mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">SEMrush</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fas fa-link mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">Ahrefs</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fas fa-fire mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">Hotjar</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fas fa-file-excel mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">Excel / Sheets</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="tool-card p-3 hover-target">
+                                    <i class="fas fa-clipboard-list mb-2 fs-2 primary-color"></i>
+                                    <h6 class="mb-0">SurveyMonkey</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="resources" class="mb-5">
+                        <h2 class="mb-4">Research & Data Resources</h2>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <a href="https://www.youtube.com/watch?v=R96uOqNfF94" target="_blank"
+                                    rel="noopener noreferrer nofollow" class="text-decoration-none">
+                                    <div class="video-card hover-target">
+                                        <img src="https://img.youtube.com/vi/R96uOqNfF94/maxresdefault.jpg"
+                                            alt="Data Research Tutorial">
+                                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                                        <div class="p-3">
+                                            <h5 class="text-white mb-0">How to do Web Research Like a Pro</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="https://www.youtube.com/watch?v=F7P9C7Gz_N8" target="_blank"
+                                    rel="noopener noreferrer nofollow" class="text-decoration-none">
+                                    <div class="video-card hover-target">
+                                        <img src="https://img.youtube.com/vi/F7P9C7Gz_N8/maxresdefault.jpg"
+                                            alt="Competitor Analysis">
+                                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                                        <div class="p-3">
+                                            <h5 class="text-white mb-0">Market Research Strategies</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="inspiration" class="mb-5">
+                        <h2 class="mb-4">Visual Insights</h2>
+                        <div class="row g-3 mb-5">
+                            <div class="col-6 col-lg-4">
+                                <a href="https://trends.google.com/" target="_blank" rel="noopener noreferrer nofollow"
+                                    class="text-decoration-none">
+                                    <div class="tool-card p-3 hover-target h-100">
+                                        <i class="fas fa-chart-line mb-2 fs-2 primary-color"></i>
+                                        <h6 class="mb-0">Google Trends</h6>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <a href="https://www.statista.com/" target="_blank" rel="noopener noreferrer nofollow"
+                                    class="text-decoration-none">
+                                    <div class="tool-card p-3 hover-target h-100">
+                                        <i class="fas fa-database mb-2 fs-2 primary-color"></i>
+                                        <h6 class="mb-0">Statista Data</h6>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <a href="https://www.thinkwithgoogle.com/" target="_blank"
+                                    rel="noopener noreferrer nofollow" class="text-decoration-none">
+                                    <div class="tool-card p-3 hover-target h-100">
+                                        <i class="fas fa-lightbulb mb-2 fs-2 primary-color"></i>
+                                        <h6 class="mb-0">Think Google</h6>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="visual-gallery">
+                            <div class="gallery-item-premium hover-target">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                                    alt="Data Analytics">
+                            </div>
+                            <div class="gallery-item-premium hover-target">
+                                <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&w=800&q=80"
+                                    alt="Market Graph">
+                            </div>
+                            <div class="gallery-item-premium hover-target">
+                                <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=800&q=80"
+                                    alt="Strategy Planning">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 p-5 glass-card about-content-card hover-target text-center">
+                        <h2 class="primary-color mb-3">Gain a Competitive Edge</h2>
+                        <p class="text-secondary mb-4">Ready to base your next move on real numbers? Let's analyze your
+                            market.</p>
+                        <a href="contact.html" class="btn btn-main px-5 py-3">START RESEARCH</a>
                     </div>
                 </div>
             </div>
