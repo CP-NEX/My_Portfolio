@@ -15,7 +15,7 @@ const projectData = [{
     title: "Responsive Design",
     cat: "web",
     link: "https://cp-nex.github.io/coinpay_website/",
-    img: "assets/images/gallary_img4.webp"
+    img: "assets/images/pro_1.webp"
 },
 {
     title: "Brand Identity",
