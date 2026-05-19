@@ -3,13 +3,13 @@ const projectData = [{
     title: "Motion Reel",
     cat: "video",
     link: "https://www.youtube.com/watch?v=20VCrgXofdk",
-    img: "assets/images/gallary_img2.webp"
+    img: "assets/images/pro_3.webp"
 },
 {
     title: "Website Design",
     cat: "web",
     link: "https://puroheritage.github.io/website/",
-    img: "assets/images/gallary_img3.webp"
+    img: "assets/images/pro_2.webp"
 },
 {
     title: "Responsive Design",
@@ -27,13 +27,13 @@ const projectData = [{
     title: "E-Commerce web software",
     cat: "web",
     link: "https://huionproject.great-site.net/",
-    img: "assets/images/gallary_img6.webp"
+    img: "assets/images/pro_5.webp"
 },
 
 {
     title: "Wordpress Dianamic Website",
     cat: "web",
-    img: "assets/images/gallary_img1.webp",
+    img: "assets/images/pro_4.webp",
     link: "https://kartikeytravels.com/", // Example ID
     desc: "Fully responsive and custom-designed WordPress dynamic website for travel services."
 },
@@ -47,7 +47,7 @@ const projectData = [{
 {
     title: "My Portfolio",
     cat: "portfolio",
-    img: "assets/images/gallary_img8.webp",
+    img: "assets/images/pro_6.webp",
     link: "index.html", // Example ID
     desc: "After Effects Animation"
 }
