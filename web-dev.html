@@ -31,7 +31,11 @@
             --card-glass: rgba(255, 255, 255, 0.03);
             --border-glass: rgba(255, 255, 255, 0.1);
         }
-
+        body.light-mode {
+            --card-glass: rgba(0, 0, 0, 0.02);
+            --border-glass: rgba(0, 0, 0, 0.08);
+            --accent-glow: rgba(214, 0, 71, 0.15);
+        }
         .article-hero {
             position: relative;
             height: 70vh;
@@ -64,7 +68,7 @@
 
         .content-section {
             padding: 100px 0;
-            background: #0a0a0a;
+            background: var(--bg-section);
         }
 
         .glass-card {
@@ -75,7 +79,9 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             backdrop-filter: blur(5px);
         }
-
+        body.light-mode .video-card {
+            background: var(--bg-card);
+        }
         .glass-card:hover {
             transform: translateY(-10px);
             border-color: var(--primary);
@@ -264,9 +270,9 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
                             <li class="breadcrumb-item"><a href="index.html"
-                                    class="text-decoration-none text-white">Home</a></li>
+                                    class="text-decoration-none text-reset">Home</a></li>
                             <li class="breadcrumb-item"><a href="services.html"
-                                    class="text-decoration-none text-white">Services</a></li>
+                                    class="text-decoration-none text-reset">Services</a></li>
                             <li class="breadcrumb-item active primary-color" aria-current="page">Web Development</li>
                         </ol>
                     </nav>
